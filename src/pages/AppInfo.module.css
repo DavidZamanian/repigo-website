@@ -1,0 +1,146 @@
+.home {
+}
+
+.carouselSection {
+  padding: 2rem 0;
+  background: var(--bg);
+}
+
+.heroSection,
+.heroSection2 {
+  display: flex;
+  align-items: center;
+  padding: 2rem 2rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 2rem;
+  min-width: 1200px;
+  min-height: 90vh;
+}
+
+.heroSection2 {
+  background: var(--bg-alt);
+}
+
+.content {
+  flex: 1;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-green);
+}
+
+.content p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.appStoreButton {
+  width: 200px;
+  height: auto;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.screenshot {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.featuresSection {
+  padding: 2rem 2rem;
+  background: var(--bg);
+}
+.featuresSection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-green);
+}
+.featureTable {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.featureTable thead {
+  background: var(--primary-green);
+}
+.featureTable thead th {
+  color: #fff;
+  padding: 1rem;
+  font-weight: normal;
+}
+.featureTable tbody tr:nth-child(odd) {
+  background: var(--bg-alt);
+}
+.featureTable tbody td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: none;
+}
+.featureTable tbody td:first-child {
+  text-align: left;
+}
+
+.innerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .heroSection,
+  .heroSection2 {
+    flex-direction: column;
+    align-items: center;
+    min-width: auto;
+    padding: 2rem 1rem;
+  }
+
+  .innerWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 100%;
+    margin-top: 1.5rem;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageContainer {
+    max-width: none;
+  }
+}

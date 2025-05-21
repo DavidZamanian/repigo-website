@@ -1,0 +1,37 @@
+{
+  "name": "my-workout-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/generate-sitemap.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,scss,md}\"",
+    "deploy": "gh-pages -d dist -b gh-pages"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "firebase": "^10.0.0",
+    "framer-motion": "^7.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.0.0",
+    "swiper": "11.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-router-dom": "^5.3.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "gh-pages": "^6.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.0.0",
+    "vite-plugin-svgr": "^3.0.0"
+  }
+}

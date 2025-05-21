@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--bg-alt);
+  /* opacity: 0.9; */
+  color: var(--text);
+  text-align: center;
+  margin-top: auto;
+  height: 200px;
+}
+.footer a {
+  margin: 0 0.5rem;
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+.copySection {
+  border-top: 0.5px solid var(--text);
+  padding: 1rem 0;
+  text-align: center;
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+:global(body.light) .copySection {
+  /* lighter border in light mode */
+  border-top-color: rgba(0, 0, 0, 0.2);
+}
+
+:global(body.dark) .copySection {
+  /* darker (brighter) border in dark mode */
+  border-top-color: rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,35 @@
+.contact {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.contact h1 {
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.contact a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 1rem;
+  }
+}

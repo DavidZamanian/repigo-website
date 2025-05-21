@@ -1,0 +1,110 @@
+.home {
+  position: relative;
+  z-index: 0;
+}
+
+.carouselSection {
+  padding: 2rem 0;
+  background: var(--bg);
+}
+
+.heroSection {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.content {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+  color: rgb(255, 255, 255);
+}
+
+.content p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.appStoreButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.appStoreButton {
+  width: 200px;
+  transition: transform 0.2s ease;
+}
+
+.appStoreButton:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.screenshot {
+  max-width: 35%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stackContainer {
+  position: relative;
+  width: 35%;
+  margin: 0 auto;
+}
+.screenshotBack1,
+.screenshotBack2,
+.screenshotFront {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.screenshotBack1 {
+  width: 45%;
+  top: 20px;
+  left: 30%;
+  transform: translateX(-100%) rotate(-5deg);
+  z-index: 1;
+}
+.screenshotBack2 {
+  width: 45%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(50%) rotate(5deg);
+  z-index: 2;
+}
+.screenshotFront {
+  position: relative;
+  width: 65%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  filter: blur(2px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
