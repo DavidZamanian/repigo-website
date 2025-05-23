@@ -4,6 +4,7 @@ import styles from "./AppInfo.module.css";
 import ongoing_dark from "@/assets/ongoing-dark.png";
 import ongoing_light from "@/assets/ongoing-light.png";
 import graph_dark from "@/assets/graph-dark.png";
+import graph_light from "@/assets/graph-light.png";
 import appStoreButton from "@/assets/apple-app-store-button.PNG";
 
 const AppInfo: React.FC = () => {
@@ -40,22 +41,24 @@ const AppInfo: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>App Info - Repigo</title>
+        <title>Repigo – Track Your Workouts</title>
         <meta
           name="description"
-          content="Download Repigo and track your workouts with detailed analytics."
+          content="Your smart fitness companion. Track workouts, analyze progress, stay motivated."
         />
-        <meta property="og:title" content="Repigo App Info" />
+        <meta property="og:title" content="Repigo – Smarter Fitness Tracking" />
         <meta
           property="og:description"
-          content="Download Repigo and monitor your fitness progress."
+          content="Track your workouts and progress over time with analytics, programs and more."
         />
+        {/* <meta property="og:image" content="https://repigo.app/og-preview.png" /> */}
+        <meta property="og:url" content="https://repigo.app" />
       </Helmet>
       <div className={styles.home}>
         <section className={styles.heroSection}>
           <div className={styles.innerWrapper}>
             <div className={styles.content}>
-              <h1>Track Smarter. Train Harder. Achieve More.</h1>
+              <h1>Track smarter. Achieve more. Reach your goals.</h1>
               <p>
                 Your ultimate fitness companion. Track workouts, monitor
                 progress, and stay motivated with a wide range of programs,
@@ -94,7 +97,7 @@ const AppInfo: React.FC = () => {
             </div>
             <div className={styles.imageContainer}>
               <img
-                src={graph_dark}
+                src={theme === "light" ? graph_light : graph_dark}
                 alt="App screenshot"
                 className={styles.screenshot}
               />

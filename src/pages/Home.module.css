@@ -100,8 +100,8 @@
 }
 
 .background {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  inset: -20px;
   filter: blur(2px);
   background-size: cover;
   background-position: center;
