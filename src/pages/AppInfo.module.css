@@ -45,7 +45,11 @@
 
 .appStoreButton {
   width: 200px;
-  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.appStoreButton:hover {
+  transform: scale(1.05);
 }
 
 .imageContainer {
@@ -62,43 +66,211 @@
 }
 
 .featuresSection {
-  padding: 2rem 2rem;
+  padding: 4rem 2rem;
   background: var(--bg);
 }
 .featuresSection h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   color: var(--primary-green);
 }
+.featuresSection .subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--text);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparisonContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .featureTable {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
   border-collapse: separate;
   border-spacing: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   overflow: hidden;
+  background: var(--bg);
+  border: 1px solid rgba(128, 128, 128, 0.2);
 }
+
 .featureTable thead {
-  background: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-green) 0%, #2d5a3d 100%);
 }
+
 .featureTable thead th {
   color: #fff;
-  padding: 1rem;
-  font-weight: normal;
+  padding: 1.5rem 1rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: center;
 }
+
+.featureTable thead th:first-child {
+  text-align: left;
+  width: 35%;
+}
+
+.featureTable thead th:nth-child(2) {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featureTable tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.featureTable tbody tr:hover {
+  background: var(--bg-alt);
+}
+
 .featureTable tbody tr:nth-child(odd) {
   background: var(--bg-alt);
 }
+
 .featureTable tbody td {
-  padding: 1rem;
-  text-align: center;
-  border-bottom: none;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  vertical-align: top;
 }
+
 .featureTable tbody td:first-child {
   text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg);
+  border-right: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.featureTable tbody td:nth-child(2) {
+  text-align: left;
+  background: var(--bg);
+}
+
+.featureTable tbody td:nth-child(3) {
+  text-align: left;
+  background: var(--bg-alt);
+  position: relative;
+}
+
+.featureTable tbody td:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-green);
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  line-height: 1.4;
+}
+
+.featureList li:last-child {
+  margin-bottom: 0;
+}
+
+.featureIcon {
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.freeIcon {
+  color: #28a745;
+}
+
+.proIcon {
+  color: var(--primary-green);
+}
+
+.unavailableIcon {
+  color: #dc3545;
+}
+
+.proFeature {
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.upgradeSection {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--bg-alt);
+  border-radius: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.upgradeSection h3 {
+  font-size: 2rem;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.upgradeSection p {
+  font-size: 1.125rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.benefitCard {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  text-align: left;
+}
+
+.benefitCard h4 {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.benefitCard h4 .emoji {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.benefitCard p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
 }
 
 .innerWrapper {
@@ -137,10 +309,159 @@
     justify-content: center;
     max-width: none;
   }
+
+  .featuresSection {
+    padding: 3rem 1rem;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featureTable {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .mobileTableContainer {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .featureTable thead th,
+  .featureTable tbody td {
+    white-space: nowrap;
+    min-width: 120px;
+  }
+
+  .featureTable thead th:first-child,
+  .featureTable tbody td:first-child {
+    min-width: 160px;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background: var(--bg);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .featureTable thead th:first-child {
+    background: var(--primary-green);
+  }
+
+  .featureList li {
+    white-space: normal;
+    font-size: 0.9rem;
+  }
+
+  .upgradeSection {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+  }
+
+  .upgradeSection h3 {
+    font-size: 1.75rem;
+  }
+
+  .benefitCard {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
   .imageContainer {
     max-width: none;
+  }
+
+  .featuresSection h2 {
+    font-size: 2rem;
+  }
+
+  .featuresSection .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .featureTable {
+    font-size: 0.9rem;
+  }
+
+  .featureTable thead th,
+  .featureTable tbody td {
+    padding: 1rem 0.75rem;
+  }
+
+  .upgradeSection h3 {
+    font-size: 1.5rem;
+  }
+
+  .upgradeSection p {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureTable thead th:first-child,
+  .featureTable tbody td:first-child {
+    min-width: 140px;
+  }
+
+  .featureTable thead th,
+  .featureTable tbody td {
+    min-width: 100px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .benefitCard h4 {
+    font-size: 1.125rem;
+  }
+
+  .benefitCard p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode specific styles */
+body.dark .featureTable {
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .featureTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .benefitCard {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .ctaButton {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .ctaButton:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .upgradeSection {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure mobile table header maintains green background in dark mode */
+@media (max-width: 768px) {
+  body.dark .featureTable thead th:first-child {
+    background: var(--primary-green);
   }
 }

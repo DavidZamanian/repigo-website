@@ -105,51 +105,596 @@ const AppInfo: React.FC = () => {
           </div>
         </section>
         <section className={styles.featuresSection}>
-          <div className={styles.innerWrapper}>
-            <div className={styles.content}>
-              <h2>Compare Free vs PRO</h2>
+          <h2>🆓 FREE vs 💎 PRO</h2>
+          <p className={styles.subtitle}>
+            Discover what's possible when you upgrade to PRO and unlock
+            professional-grade fitness tracking
+          </p>
 
+          <div className={styles.comparisonContainer}>
+            <div className={styles.mobileTableContainer}>
               <table className={styles.featureTable}>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Free</th>
+                    <th>Feature Category</th>
+                    <th>FREE</th>
                     <th>PRO</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Library of Programs, Workouts and Exercises</td>
-                    <td>✓</td>
-                    <td>✓</td>
+                    <td>🏋️ Exercise Creation</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Use 100+ built-in exercises
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Track basic workouts
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Log sets, reps, and weight
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Everything in FREE
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Create unlimited custom exercises
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Personalize every workout detail
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Advanced exercise customization
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Progression Analytics</td>
-                    <td>✓</td>
-                    <td>✓</td>
+                    <td>📋 Workout Programs</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Use pre-built workout templates
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Follow default programs
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Everything in FREE
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Create personalized workout programs
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Design programs tailored to your goals
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Advanced program management
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Creating new exercises</td>
-                    <td>✕</td>
-                    <td>✓</td>
+                    <td>📊 Progress Analytics</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Basic personal record metrics
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Everything in FREE
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Advanced metrics (13+ additional):
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Volume tracking • Reps analysis
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Interval performance • Power metrics
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Tempo tracking • Intensity analysis
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Comprehensive trend reports
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Creating new workouts</td>
-                    <td>✕</td>
-                    <td>✓</td>
+                    <td>📈 Performance Insights</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Basic workout history
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Simple progress tracking
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Year-to-date records
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Everything in FREE
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Deeper insights & detailed analytics
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Advanced interval metrics
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Precision performance tracking
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Goal setting & milestone reminders
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Creating new programs</td>
-                    <td>✕</td>
-                    <td>✓</td>
+                    <td>📤 Data Export</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.unavailableIcon
+                            }
+                          >
+                            ❌
+                          </span>
+                          No data export
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Export entire workout history as CSV
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Review progress offline
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Full data ownership & portability
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Export data</td>
-                    <td>✕</td>
-                    <td>✓</td>
+                    <td>🎯 Detailed Metrics</td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Basic strength & cardio tracking
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Standard measurements
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul className={styles.featureList}>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.freeIcon
+                            }
+                          >
+                            ✅
+                          </span>
+                          Everything in FREE
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            Advanced interval analytics:
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Interval min/max/average duration
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Interval distance & pace tracking
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Total interval metrics
+                          </span>
+                        </li>
+                        <li>
+                          <span
+                            className={
+                              styles.featureIcon + " " + styles.proIcon
+                            }
+                          >
+                            💎
+                          </span>
+                          <span className={styles.proFeature}>
+                            • Professional-grade precision
+                          </span>
+                        </li>
+                      </ul>
+                    </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div className={styles.upgradeSection}>
+              <h3>🚀 Why Upgrade to PRO?</h3>
+              <p>
+                Transform your training with professional-grade analytics and
+                unlimited customization designed for serious fitness
+                enthusiasts.
+              </p>
+
+              <div className={styles.benefitsGrid}>
+                <div className={styles.benefitCard}>
+                  <h4>
+                    <span className={styles.emoji}>🎯</span>For Serious Athletes
+                  </h4>
+                  <p>
+                    Get 13+ advanced metrics including volume, intervals, pace
+                    variations, tempo, and intensity tracking. Access the same
+                    analytics used by personal trainers and professional
+                    coaches.
+                  </p>
+                </div>
+
+                <div className={styles.benefitCard}>
+                  <h4>
+                    <span className={styles.emoji}>🏋️</span>Unlimited
+                    Customization
+                  </h4>
+                  <p>
+                    Create custom exercises and programs that match your exact
+                    training style. Design workouts that actually fit your goals
+                    and training methodology.
+                  </p>
+                </div>
+
+                <div className={styles.benefitCard}>
+                  <h4>
+                    <span className={styles.emoji}>📊</span>Professional
+                    Analytics
+                  </h4>
+                  <p>
+                    Advanced interval analytics, comprehensive trend reports,
+                    and precision performance tracking. See patterns and
+                    improvements you never noticed before.
+                  </p>
+                </div>
+
+                <div className={styles.benefitCard}>
+                  <h4>
+                    <span className={styles.emoji}>🔄</span>Complete Data
+                    Control
+                  </h4>
+                  <p>
+                    Export your entire workout history as CSV for offline
+                    analysis. Own your data and maintain full control over your
+                    fitness journey.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -1,5 +1,11 @@
-import React from "react";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Header } from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -11,11 +17,23 @@ import Terms from "@/pages/Terms";
 
 const App: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle GitHub Pages SPA redirect
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const redirectPath = searchParams.get("redirect");
+
+    if (redirectPath && location.pathname === "/") {
+      // Remove the redirect parameter and navigate to the intended route
+      navigate(redirectPath, { replace: true });
+    }
+  }, [location, navigate]);
   return (
     <div className="app">
       <Header />
       <div className="pageContainer">
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             {/* <Route path="/about" element={<AppInfo />} /> */}
