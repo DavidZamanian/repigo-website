@@ -1,35 +1,91 @@
 .contact {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
   background: var(--bg);
   color: var(--text);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact h1 {
   color: var(--primary-green);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .contact p {
-  font-size: 1.125rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact a {
   color: var(--primary-green);
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .contact a:hover {
-  text-decoration: underline;
+  background: rgba(44, 187, 75, 0.1);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.contactCard {
+  background: var(--bg-alt);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact p {
+    font-size: 1.125rem;
+  }
+
+  .contactCard {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
   .contact {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
+
+  .contactCard {
+    padding: 1.5rem;
   }
 }

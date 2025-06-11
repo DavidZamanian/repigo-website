@@ -5,28 +5,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
   background: var(--bg-alt);
-  /* opacity: 0.9; */
   color: var(--text);
   text-align: center;
   margin-top: auto;
-  height: 200px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
 }
+
 .footer a {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
   color: var(--primary-green);
   text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.footer a:hover {
+  background: rgba(44, 187, 75, 0.1);
+  transform: translateY(-1px);
 }
 
 .copySection {
   position: relative;
   z-index: 10;
-  border-top: 0.5px solid var(--text);
-  padding: 1rem 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 1.5rem 2rem;
   text-align: center;
   background: var(--bg-alt);
   color: var(--text);
+  font-size: 0.9rem;
 }
 
 :global(body.light) .copySection {

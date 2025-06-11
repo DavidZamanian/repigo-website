@@ -1,14 +1,15 @@
 :root {
   --primary-green: rgb(44, 187, 75);
   --bg-light: #ffffff;
-  --bg-light-alt: #f0f0f0;
+  --bg-light-alt: #f8f9fa;
   --bg-dark: #121212;
   --bg-dark-alt: #1e1e1e;
-  --text-light: #000000;
+  --text-light: #2c3e50;
   --text-dark: #ffffff;
   --bg: var(--bg-light);
   --text: var(--text-light);
   --bg-alt: var(--bg-light-alt);
+  --bg-rgb: 255, 255, 255;
 }
 
 html,
@@ -21,9 +22,13 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 60px;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app {
@@ -35,6 +40,8 @@ body {
 body.light {
   --bg: var(--bg-light);
   --text: var(--text-light);
+  --bg-alt: var(--bg-light-alt);
+  --bg-rgb: 255, 255, 255;
 }
 body.light .pageContainer {
   background: var(--bg);
@@ -43,9 +50,21 @@ body.dark {
   --bg: var(--bg-dark);
   --text: var(--text-dark);
   --bg-alt: var(--bg-dark-alt);
+  --bg-rgb: 18, 18, 18;
 }
 body.dark .pageContainer {
   background: var(--bg);
+}
+
+/* Dark mode specific improvements */
+body.dark {
+  --shadow-light: rgba(255, 255, 255, 0.05);
+  --shadow-medium: rgba(255, 255, 255, 0.1);
+}
+
+body.light {
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
 }
 
 .pageContainer {
@@ -54,4 +73,94 @@ body.dark .pageContainer {
   margin: 0 auto;
 
   background: var(--bg);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* Enhanced dark mode scrollbar */
+body.dark ::-webkit-scrollbar-track {
+  background: var(--bg-dark-alt);
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(44, 187, 75, 0.2);
+  color: var(--text);
+}
+
+/* Dark mode selection */
+body.dark ::selection {
+  background: rgba(44, 187, 75, 0.3);
+  color: var(--text-dark);
+}
+
+/* Improved typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* Link improvements */
+a {
+  color: var(--primary-green);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #2d5a3d;
+}
+
+/* Button base styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
 }
