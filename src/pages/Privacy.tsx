@@ -27,8 +27,10 @@ const Privacy: React.FC = () => (
       <h2>What personal data do we collect?</h2>
       <p>
         When you register a Repigo account we collect personal data from you
-        such as your email address. When continuing to use the app you upload
-        personal data, such as gym workouts data to your account.
+        such as your email address and gender information. When continuing to
+        use the app you upload personal data, such as gym workouts data to your
+        account. We collect gender information to tailor workout recommendations
+        and provide more personalized fitness content.
       </p>
       <p>
         As we want to improve our services, we may collect additional personal
