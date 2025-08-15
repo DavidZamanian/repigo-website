@@ -44,7 +44,7 @@ const Home: React.FC = () => (
             exercises.
           </p>
           <a
-            href="https://apps.apple.com"
+            href="https://apps.apple.com/app/id6746357264"
             target="_blank"
             rel="noopener noreferrer"
           >
