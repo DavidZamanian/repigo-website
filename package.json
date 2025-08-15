@@ -6,7 +6,7 @@
   "scripts": {
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "generate:favicons": "node scripts/generate-favicons.mjs",
-    "prebuild": "node scripts/generate-sitemap.js && node scripts/generate-favicons.mjs",
+    "prebuild": "node scripts/generate-sitemap.js && node scripts/generate-favicons.mjs && node scripts/cache-bust-icons.mjs",
     "dev": "node scripts/generate-favicons.mjs && vite",
     "build": "vite build",
     "preview": "vite preview",
