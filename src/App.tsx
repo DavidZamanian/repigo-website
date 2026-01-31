@@ -14,6 +14,7 @@ import AppInfo from "@/pages/AppInfo";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
+import VerifyEmail from "@/pages/VerifyEmail";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/verify" element={<VerifyEmail />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
