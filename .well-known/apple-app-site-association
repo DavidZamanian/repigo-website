@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4D49P96942.com.repigo.app",
+        "paths": ["/verify", "/verify/*"]
+      },
+      {
+        "appID": "4D49P96942.com.repigo.app.debug",
+        "paths": ["/verify", "/verify/*"]
+      }
+    ]
+  }
+}
