@@ -16,6 +16,7 @@ import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import VerifyEmail from "@/pages/VerifyEmail";
 import ResetPassword from "@/pages/ResetPassword";
+import AuthAction from "@/pages/AuthAction";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -43,8 +44,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/verify" element={<VerifyEmail />} />
-            <Route path="/reset" element={<ResetPassword />} />
+            <Route path="/auth" element={<AuthAction />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
