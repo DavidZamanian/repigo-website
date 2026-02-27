@@ -6,20 +6,27 @@ const aiBlogPosts = require("../src/content/aiBlogPosts.json");
 
 // Base domain (override via SITE_URL environment variable)
 const domain = process.env.SITE_URL || "https://repigo.app";
+const buildDate = new Date().toISOString().slice(0, 10);
 
 // List of front-end routes to include in the sitemap
 const baseRoutes = [
-  { path: "/", priority: 1.0 },
-  { path: "/contact", priority: 0.8 },
-  { path: "/privacy", priority: 0.6 },
-  { path: "/terms", priority: 0.6 },
+  { path: "/", lastmod: buildDate },
+  { path: "/contact", lastmod: buildDate },
+  { path: "/privacy", lastmod: buildDate },
+  { path: "/terms", lastmod: buildDate },
 ];
 
 const aiBlogRoutes = [
-  { path: "/ai-blog", priority: 0.7 },
+  {
+    path: "/ai-blog",
+    lastmod: aiBlogPosts
+      .map((post) => post.updatedAt || post.publishedAt)
+      .sort()
+      .at(-1) || buildDate,
+  },
   ...aiBlogPosts.map((post) => ({
     path: `/ai-blog/${post.slug}`,
-    priority: 0.55,
+    lastmod: post.updatedAt || post.publishedAt || buildDate,
   })),
 ];
 
@@ -39,14 +46,14 @@ ${routes
     (route) =>
       `  <url>
     <loc>${domain}${route.path}</loc>
-    <priority>${route.priority}</priority>
+    <lastmod>${route.lastmod}</lastmod>
   </url>`
   )
   .join("\n")}
 </urlset>`;
 
 // Write sitemap.xml
-destination = path.join(publicDir, "sitemap.xml");
+const destination = path.join(publicDir, "sitemap.xml");
 fs.writeFileSync(destination, sitemapContent, "utf8");
 console.log(`Generated ${destination}`);
 

@@ -9,19 +9,19 @@ const PAGE_TITLE = "AI Blog | Repigo Workout Tracking";
 const PAGE_DESCRIPTION =
   "Explore guides about workout tracking, progressive overload, training structure, and app comparisons.";
 
-const getYesterdayDateLabel = (): string => {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-
-  return yesterday.toLocaleDateString("en-US", {
+const formatDateLabel = (isoDate: string): string =>
+  new Date(`${isoDate}T00:00:00`).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
-};
 
 const AiBlog: React.FC = () => {
-  const yesterdayDate = getYesterdayDateLabel();
+  const orderedPosts = [...aiBlogPosts].sort(
+    (a, b) =>
+      new Date(`${b.updatedAt}T00:00:00`).getTime() -
+      new Date(`${a.updatedAt}T00:00:00`).getTime()
+  );
 
   return (
     <>
@@ -42,7 +42,7 @@ const AiBlog: React.FC = () => {
         </section>
 
         <section className={styles.grid} aria-label="AI Blog articles">
-          {aiBlogPosts.map((post) => (
+          {orderedPosts.map((post) => (
             <article key={post.id} className={styles.card}>
               <Link
                 to={`/ai-blog/${post.slug}`}
@@ -56,7 +56,9 @@ const AiBlog: React.FC = () => {
                   loading="lazy"
                 />
                 <div className={styles.cardBody}>
-                  <p className={styles.publishDate}>{yesterdayDate}</p>
+                  <p className={styles.publishDate}>
+                    {formatDateLabel(post.updatedAt)}
+                  </p>
                   <h2>{post.title}</h2>
                   <p className={styles.summary}>{post.summary}</p>
                 </div>

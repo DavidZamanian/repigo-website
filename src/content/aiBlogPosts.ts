@@ -20,6 +20,8 @@ export interface AiBlogPost {
   title: string;
   summary: string;
   cover: AiBlogCoverKey;
+  publishedAt: string;
+  updatedAt: string;
   sections: AiBlogSection[];
 }
 

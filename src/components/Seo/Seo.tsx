@@ -8,6 +8,7 @@ interface SeoProps {
   description: string;
   path?: string;
   ogType?: "website" | "article";
+  image?: string;
 }
 
 const absoluteUrl = (path: string): string => new URL(path, SITE_URL).toString();
@@ -17,8 +18,10 @@ const Seo: React.FC<SeoProps> = ({
   description,
   path = "/",
   ogType = "website",
+  image,
 }) => {
   const canonicalUrl = absoluteUrl(path);
+  const imageUrl = image ? absoluteUrl(image) : undefined;
 
   return (
     <Helmet>
@@ -31,10 +34,12 @@ const Seo: React.FC<SeoProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
+      {imageUrl && <meta property="og:image" content={imageUrl} />}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      {imageUrl && <meta name="twitter:image" content={imageUrl} />}
     </Helmet>
   );
 };
