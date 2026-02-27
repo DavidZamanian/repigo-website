@@ -1,0 +1,146 @@
+.page {
+  width: min(920px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 2.2rem 0 3.2rem;
+}
+
+.article {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--surface-muted);
+  display: block;
+}
+
+.publishDate {
+  margin: 1.1rem 1.4rem 0;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+}
+
+.article h1 {
+  margin: 0.4rem 1.4rem 0;
+  font-size: clamp(1.7rem, 2.7vw, 2.25rem);
+}
+
+.summary {
+  margin: 0.78rem 1.4rem 0;
+  color: var(--text-muted);
+  font-size: 1.03rem;
+}
+
+.content {
+  margin: 1.1rem 1.4rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.section h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.section p {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  white-space: pre-line;
+}
+
+.tableWrap {
+  margin-top: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: auto;
+  background: var(--surface-muted);
+}
+
+.tableCaption {
+  margin: 0;
+  padding: 0.62rem 0.75rem 0.58rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.72rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.table th {
+  color: var(--text);
+  font-weight: 700;
+  background: rgba(44, 187, 75, 0.08);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.backLink {
+  display: inline-flex;
+  margin: 1.45rem 1.4rem 1.4rem;
+  color: var(--primary-green-strong);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.backLink:hover {
+  color: var(--primary-green);
+}
+
+@media (max-width: 980px) {
+  .page {
+    width: min(920px, calc(100% - 1.6rem));
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.9rem 0 2.6rem;
+  }
+
+  .article h1,
+  .publishDate,
+  .summary,
+  .content,
+  .backLink {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .article h1 {
+    margin-top: 0.34rem;
+  }
+
+  .publishDate {
+    margin-top: 0.9rem;
+  }
+
+  .backLink {
+    margin-top: 1.2rem;
+    margin-bottom: 1.1rem;
+  }
+}

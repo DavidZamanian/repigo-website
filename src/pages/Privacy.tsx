@@ -1,17 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import Seo from "@/components/Seo/Seo";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail/ObfuscatedEmail";
 import styles from "./Privacy.module.css";
 
 const Privacy: React.FC = () => (
   <>
-    <Helmet>
-      <title>Privacy Policy - Repigo</title>
-      <meta
-        name="description"
-        content="Read Repigo's privacy policy and learn how we handle your personal data."
-      />
-    </Helmet>
+    <Seo
+      title="Privacy Policy - Repigo"
+      description="Read Repigo's privacy policy and learn how we handle your personal data."
+      path="/privacy"
+    />
     <main className={styles.privacy}>
       <h1>Privacy Policy</h1>
       <p>

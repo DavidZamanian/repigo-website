@@ -1,251 +1,355 @@
 .home {
-  position: relative;
-  z-index: 0;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll on the entire home page */
-}
-
-.carouselSection {
-  padding: 4rem 0;
-  background: var(--bg);
+  overflow: hidden;
 }
 
 .heroSection {
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
-  justify-content: center;
-  max-width: 1200px;
+  position: relative;
+  isolation: isolate;
+  padding: 3.8rem 0 3.3rem;
+}
+
+.heroBackdrop {
+  position: absolute;
+  inset: -120px -140px auto;
+  height: 640px;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 22% 26%, rgba(44, 187, 75, 0.32), transparent 43%),
+    radial-gradient(circle at 82% 12%, rgba(44, 187, 75, 0.2), transparent 42%),
+    linear-gradient(
+      165deg,
+      rgba(44, 187, 75, 0.11) 0%,
+      rgba(44, 187, 75, 0.02) 48%,
+      transparent 80%
+    );
+}
+
+.heroInner {
+  width: min(1140px, calc(100% - 2.5rem));
   margin: 0 auto;
-  gap: 3rem;
-  min-height: 80vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.05fr) minmax(280px, 0.95fr);
+  align-items: center;
+  gap: 2.6rem;
 }
 
 .content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 600px;
+  max-width: 640px;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--primary-green-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .content h1 {
-  font-size: 4rem;
-  margin: 0 0 1.5rem 0;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.55rem);
+  color: var(--text);
+  max-width: 12.5ch;
 }
 
-.content p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.lead {
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 48ch;
 }
 
-.appStoreButtonContainer {
+.ctaArea {
+  margin-top: 1.8rem;
+  --store-badge-width: 184px;
+  --store-badge-height: calc(var(--store-badge-width) / 3);
   display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.1rem;
+}
+
+.appStoreButtonLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .appStoreButton {
-  width: 200px;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  width: var(--store-badge-width);
+  max-width: 100%;
+  aspect-ratio: 3 / 1;
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(16, 31, 20, 0.2));
+  transition: transform 0.2s ease;
 }
 
 .appStoreButton:hover {
-  transform: translateY(-2px) scale(1.05);
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  transform: translateY(-2px);
+}
+
+.ratingCard {
+  min-width: 150px;
+  width: fit-content;
+  height: var(--store-badge-height);
+  box-sizing: border-box;
+  padding: 0.26rem 0.62rem 0.32rem;
+  border-radius: 14px;
+  border: 1px solid rgba(44, 187, 75, 0.28);
+  background:
+    linear-gradient(
+      155deg,
+      rgba(44, 187, 75, 0.2),
+      rgba(44, 187, 75, 0.04) 48%,
+      rgba(var(--bg-rgb), 0.45)
+    );
+  box-shadow: 0 12px 24px rgba(16, 31, 20, 0.14);
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingStars {
+  margin: 0;
+  color: var(--primary-green-strong);
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+  font-weight: 800;
+}
+
+.ratingValue {
+  margin: 0.02rem 0 0;
+  font-family: "Sora", "Manrope", sans-serif;
+  font-size: 1.58rem;
+  line-height: 0.9;
+  color: var(--text);
+}
+
+.ratingLabel {
+  margin: 0.02rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+:global(body.dark) .ratingCard {
+  border-color: rgba(44, 187, 75, 0.34);
+  background:
+    linear-gradient(
+      155deg,
+      rgba(44, 187, 75, 0.25),
+      rgba(44, 187, 75, 0.05) 48%,
+      rgba(var(--bg-rgb), 0.5)
+    );
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+}
+
+:global(body.dark) .ratingStars {
+  color: #9de5ae;
 }
 
 .imageContainer {
-  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.screenshot {
-  max-width: 35%;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .stackContainer {
   position: relative;
-  width: 60%;
-  margin: 0 auto;
+  width: min(520px, 100%);
+  padding-top: 0.4rem;
 }
 
-.screenshotBack1,
-.screenshotBack2,
+.screenshotBackLeft,
+.screenshotBackRight,
 .screenshotFront {
-  position: absolute;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  /* NO default transition - only add on desktop */
+  display: block;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.34));
 }
 
-.screenshotBack1 {
-  width: 50%;
-  top: 20px;
-  left: 30%;
-  transform: translateX(-100%) rotate(-5deg);
-  z-index: 1;
+.screenshotBackLeft,
+.screenshotBackRight {
+  position: absolute;
+  top: 1.4rem;
+  width: 58%;
+  opacity: 1;
 }
-.screenshotBack2 {
-  width: 50%;
-  top: 20px;
-  left: 50%;
-  transform: translateX(50%) rotate(5deg);
-  z-index: 2;
+
+.screenshotBackLeft {
+  left: 0;
+  transform: rotate(-7deg) translateX(-2%);
 }
+
+.screenshotBackRight {
+  right: 0;
+  transform: rotate(7deg) translateX(2%);
+}
+
 .screenshotFront {
   position: relative;
-  width: 70%;
+  width: 68%;
   margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  z-index: 3;
 }
 
-/* ONLY enable hover effects on desktop with mouse */
-@media (min-width: 1201px) and (hover: hover) and (pointer: fine) {
-  .screenshotBack1,
-  .screenshotBack2,
-  .screenshotFront {
-    transition: transform 0.3s ease;
-  }
-
-  .stackContainer:hover .screenshotBack1 {
-    transform: translateX(-120%) rotate(-8deg) !important;
-  }
-
-  .stackContainer:hover .screenshotBack2 {
-    transform: translateX(70%) rotate(8deg) !important;
-  }
-
-  .stackContainer:hover .screenshotFront {
-    transform: scale(1.02) !important;
-  }
+.featuresSection {
+  width: min(1140px, calc(100% - 2.5rem));
+  margin: 1.3rem auto 0;
+  padding: 3.2rem 0;
 }
 
-/* Responsive design */
-@media (max-width: 1200px) {
-  .heroSection {
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem;
-    text-align: center;
+.sectionHeader {
+  max-width: 700px;
+}
+
+.sectionEyebrow {
+  margin: 0;
+  color: var(--primary-green-strong);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.sectionHeader h2 {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+}
+
+.featureGrid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.2rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.featureCard h3 {
+  margin: 0;
+  font-size: 1.14rem;
+}
+
+.featureCard p {
+  margin: 0.6rem 0 0;
+  color: var(--text-muted);
+}
+
+.bottomCta {
+  width: min(1140px, calc(100% - 2.5rem));
+  margin: 0 auto 3.4rem;
+}
+
+.bottomCtaInner {
+  border: 1px solid rgba(44, 187, 75, 0.25);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(44, 187, 75, 0.15),
+      rgba(44, 187, 75, 0.03) 58%,
+      rgba(var(--bg-rgb), 0.3) 100%
+    );
+  padding: clamp(1.6rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.bottomCtaInner h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+}
+
+.bottomCtaInner p {
+  margin: 0.9rem auto 0;
+  max-width: 56ch;
+  color: var(--text-muted);
+}
+
+.textCtaButton {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  padding: 0.68rem 1.2rem;
+  border-radius: 999px;
+  background: var(--primary-green);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.textCtaButton:hover {
+  color: #ffffff;
+  background: var(--primary-green-strong);
+}
+
+@media (max-width: 980px) {
+  .heroInner,
+  .featuresSection,
+  .bottomCta {
+    width: min(1140px, calc(100% - 1.6rem));
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .content {
     max-width: none;
-    margin-bottom: 2rem;
   }
 
   .content h1 {
-    font-size: 3rem;
+    max-width: 14ch;
   }
 
-  .stackContainer {
-    width: 55%;
+  .imageContainer {
+    padding-top: 0.4rem;
   }
 
-  /* ONLY enable tablet hover effects on devices with precise mouse control */
-  @media (hover: hover) and (pointer: fine) {
-    .screenshotBack1,
-    .screenshotBack2,
-    .screenshotFront {
-      transition: transform 0.3s ease;
-    }
-
-    .stackContainer:hover .screenshotBack1 {
-      transform: translateX(-110%) rotate(-6deg) !important;
-    }
-
-    .stackContainer:hover .screenshotBack2 {
-      transform: translateX(60%) rotate(6deg) !important;
-    }
-
-    .stackContainer:hover .screenshotFront {
-      transform: scale(1.01) !important;
-    }
+  .featureGrid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .heroSection {
-    padding: 2rem 1rem;
-    min-height: 70vh;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-
-  .content h1 {
-    font-size: 2.5rem;
-  }
-
-  .content p {
-    font-size: 1.125rem;
+    padding: 3rem 0 2.8rem;
   }
 
   .stackContainer {
-    width: 65%;
+    width: min(430px, 96%);
   }
 
-  .appStoreButton {
-    width: 180px;
+  .screenshotBackLeft,
+  .screenshotBackRight {
+    width: 52%;
   }
 
-  /* Ensure NO transitions or hover effects on mobile */
-  .screenshotBack1,
-  .screenshotBack2,
   .screenshotFront {
-    transition: none !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .content h1 {
-    font-size: 2rem;
+    width: 66%;
   }
 
-  .content p {
-    font-size: 1rem;
+  .ctaArea {
+    --store-badge-width: 168px;
   }
 
-  .stackContainer {
-    width: 60%;
+  .ratingCard {
+    min-width: 140px;
+    padding: 0.22rem 0.56rem 0.28rem;
   }
 
-  .appStoreButton {
-    width: 160px;
+  .ratingValue {
+    font-size: 1.44rem;
   }
-
-  /* Ensure NO transitions or hover effects on small mobile */
-  .screenshotBack1,
-  .screenshotBack2,
-  .screenshotFront {
-    transition: none !important;
-  }
-}
-
-.background {
-  position: fixed;
-  inset: -20px;
-  filter: blur(2px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
 }

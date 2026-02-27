@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 220" role="img" aria-labelledby="title desc">
+  <title id="title">Repigo average rating badge</title>
+  <desc id="desc">Five stars with a 5.0 average rating.</desc>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="12" x2="338" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#202833" />
+      <stop offset="1" stop-color="#0f141c" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="372" height="212" rx="24" fill="url(#bg)" stroke="#3b4652" stroke-opacity=".6" stroke-width="2" />
+
+  <g id="laurel" fill="#9aa3ad" fill-opacity=".62">
+    <ellipse cx="0" cy="-56" rx="7.5" ry="14" transform="rotate(-34 0 -56)" />
+    <ellipse cx="-14" cy="-42" rx="7.4" ry="13.8" transform="rotate(-36 -14 -42)" />
+    <ellipse cx="-24" cy="-24" rx="7.4" ry="13.6" transform="rotate(-38 -24 -24)" />
+    <ellipse cx="-31" cy="-5" rx="7.3" ry="13.4" transform="rotate(-40 -31 -5)" />
+    <ellipse cx="-34" cy="15" rx="7.2" ry="13.2" transform="rotate(-42 -34 15)" />
+    <ellipse cx="-32" cy="35" rx="7.1" ry="13" transform="rotate(-44 -32 35)" />
+    <ellipse cx="-25" cy="53" rx="7" ry="12.8" transform="rotate(-46 -25 53)" />
+  </g>
+
+  <g transform="translate(84 110)">
+    <use href="#laurel" />
+  </g>
+  <g transform="translate(296 110) scale(-1 1)">
+    <use href="#laurel" />
+  </g>
+
+  <text x="190" y="54" text-anchor="middle" fill="#f4f7fa" font-family="Arial, sans-serif" font-size="30" letter-spacing="5">★★★★★</text>
+  <text x="190" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="92" font-weight="700">5.0</text>
+  <text x="190" y="176" text-anchor="middle" fill="#aab3bd" font-family="Arial, sans-serif" font-size="42">Avg Rating</text>
+</svg>

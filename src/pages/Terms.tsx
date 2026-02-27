@@ -1,17 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import Seo from "@/components/Seo/Seo";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail/ObfuscatedEmail";
 import styles from "./Terms.module.css";
 
 const Terms: React.FC = () => (
   <>
-    <Helmet>
-      <title>Terms of Use - Repigo</title>
-      <meta
-        name="description"
-        content="Review Repigo's Terms of Use for accessing and using our services."
-      />
-    </Helmet>
+    <Seo
+      title="Terms of Use - Repigo"
+      description="Review Repigo's Terms of Use for accessing and using our services."
+      path="/terms"
+    />
     <main className={styles.terms}>
       <h1>Terms of Use</h1>
       <p>

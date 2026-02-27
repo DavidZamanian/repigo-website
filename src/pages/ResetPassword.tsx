@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Seo from "@/components/Seo/Seo";
 import styles from "./ResetPassword.module.css";
 
 type Status = "checking" | "ready" | "submitting" | "success" | "error";
@@ -186,6 +187,11 @@ const ResetPassword: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <Seo
+        title="Reset Password - Repigo"
+        description="Reset your Repigo account password and return to the app."
+        path="/auth?mode=resetPassword"
+      />
       <div className={styles.card}>
         <div className={styles.status}>
           {isBusy ? <span className={styles.spinner} /> : null}

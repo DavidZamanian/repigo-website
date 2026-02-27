@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Seo from "@/components/Seo/Seo";
 import styles from "./VerifyEmail.module.css";
 
 type Status = "verifying" | "success" | "error";
@@ -88,6 +89,11 @@ const VerifyEmail: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <Seo
+        title="Verify Email - Repigo"
+        description="Verify your Repigo email address and return to the app."
+        path="/auth?mode=verifyEmail"
+      />
       <div className={styles.card}>
         <div className={styles.status}>
           {isVerifying ? <span className={styles.spinner} /> : null}

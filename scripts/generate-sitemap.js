@@ -2,18 +2,28 @@
 // Script to dynamically generate sitemap.xml and robots.txt into the public directory
 const fs = require("fs");
 const path = require("path");
+const aiBlogPosts = require("../src/content/aiBlogPosts.json");
 
 // Base domain (override via SITE_URL environment variable)
 const domain = process.env.SITE_URL || "https://repigo.app";
 
 // List of front-end routes to include in the sitemap
-const routes = [
+const baseRoutes = [
   { path: "/", priority: 1.0 },
-  { path: "/app", priority: 0.8 },
   { path: "/contact", priority: 0.8 },
   { path: "/privacy", priority: 0.6 },
   { path: "/terms", priority: 0.6 },
 ];
+
+const aiBlogRoutes = [
+  { path: "/ai-blog", priority: 0.7 },
+  ...aiBlogPosts.map((post) => ({
+    path: `/ai-blog/${post.slug}`,
+    priority: 0.55,
+  })),
+];
+
+const routes = [...baseRoutes, ...aiBlogRoutes];
 
 // Ensure public directory exists
 const publicDir = path.join(__dirname, "..", "public");

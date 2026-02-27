@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import Seo from "@/components/Seo/Seo";
 import VerifyEmail from "./VerifyEmail";
 import ResetPassword from "./ResetPassword";
 import styles from "./AuthAction.module.css";
@@ -22,6 +23,11 @@ const AuthAction: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <Seo
+        title="Repigo Account Action"
+        description="Complete your Repigo account action, such as email verification or password reset."
+        path="/auth"
+      />
       <div className={styles.card}>
         <div className={styles.status}>Action Required</div>
         <h1 className={styles.title}>Invalid link</h1>
